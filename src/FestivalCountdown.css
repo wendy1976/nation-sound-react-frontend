@@ -1,0 +1,22 @@
+.countdown-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .countdown-item {
+    text-align: center;
+  }
+  
+  .countdown-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FCA311; /* Couleur du texte */
+    background-color: #14213D; /* Couleur de fond */
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .countdown-label {
+    margin-top: 5px;
+    color: #14213D; /* Couleur du texte */
+  }

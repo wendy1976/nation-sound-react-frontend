@@ -1,0 +1,9 @@
+/* Effet hover pour les liens */
+.link-hover:hover {
+    color: #FCA311 !important;
+}
+
+/* Pour les icônes de réseaux sociaux */
+.custom-icon-color:hover {
+    color: #FCA311; /* Couleur de l'icône lors du survol */
+}

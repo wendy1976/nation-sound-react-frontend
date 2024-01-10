@@ -1,0 +1,52 @@
+/* Importation des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Styles pour le corps de la page */
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles pour les titres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* Définition des couleurs dans les variables CSS */
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --coral: #e5383b;
+  --grey: #E5E5E5;
+  --blue: #14213D;
+  --orange: #FCA311;
+}
+
+/* Styles pour les couleurs de texte et d'arrière-plan */
+.white { color: var(--white); }
+.bgWhite { background-color: var(--white); }
+.black { color: var(--black); }
+.coral { color: var(--coral); }
+.bgCoral { background-color: var(--coral); }
+.bgBlack { background-color: var(--black); }
+.grey { color: var(--grey); }
+.bgGrey { background-color: var(--grey); }
+.blue { color: var(--blue); }
+.bgBlue { background-color: var(--blue); }
+.orange { color: var(--orange); }
+.bgOrange { background-color: var(--orange); }
+
+/* Styles pour la classe App */
+.App { text-align: center; }
+
+/* Dimensionnement du logo */
+#logo {
+  padding-left: 10%;
+  width: 20% !important;
+  height: 20% !important;
+}
+/* Styles pour la barre de navigation quand la page est active */
+.orange-text {
+  color: orange !important;
+}

@@ -1,0 +1,22 @@
+/*rajout pastille dans mon bouton panier avec le nombre d'articles dans le panier*/
+.badge {
+    background-color: #e5383b;; /* Couleur de fond de la pastille */
+    color: white; /* Couleur du texte dans la pastille */
+    border-radius: 50%; /* Forme de la pastille (cercle) */
+    padding: 0.2rem 0.5rem; /* Espace à l'intérieur de la pastille */
+    margin-left: 0.5rem; /* Marge à gauche pour l'espacement du texte */
+    font-size: 0.8rem; /* Taille du texte dans la pastille */
+  } 
+
+  .panier {
+    position: absolute;
+    top: 100px;
+    margin-top: 20px;
+    padding-top: 20px;
+    right: 0;
+    width: 300px; /* Largeur du panier */
+    overflow: auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    box-shadow: 0 0 10px #14213D;
+  }

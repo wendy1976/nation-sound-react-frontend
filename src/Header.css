@@ -1,0 +1,31 @@
+.nav-item.active h1 {
+    color: #FCA311; /* Couleur du texte lorsque le lien est actif */
+}
+
+.nav-item h1:hover {
+    color: #e5e5e5; /* Couleur du texte lors du survol */
+}
+
+.infos-sections {
+    position: absolute;
+    background-color: #14213D;
+    border: 1px solid #ddd; /* Bordure grise */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 10px;
+    z-index: 1;
+    width: 200px; /* Ajustez la largeur selon vos besoins */
+    font-family:'Quicksand', 'Arial Rounded MT Bold', Arial, sans-serif;
+  }
+  
+  .infos-sections a {
+    color: #FFFFFF; /* Couleur blanc*/
+    text-decoration: none;
+  }
+  
+  .infos-sections a:hover {
+    color: #E5E5E5; /* Couleur gris au survol */
+  }
+
+  .infos-sections .active a {
+    color: #FCA311 !important; /* Couleur orange pour la section active*/
+  }

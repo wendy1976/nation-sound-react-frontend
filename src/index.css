@@ -1,0 +1,299 @@
+/* Importation des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Styles pour le corps de la page */
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Utilisation de Poppins par défaut, sinon Segoe UI, Tahoma, Geneva, Verdana ou une police sans-serif générique */
+}
+
+/* Styles pour les titres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', 'Arial Rounded MT Bold', Arial, sans-serif;
+  /* Utilisation de Quicksand par défaut, sinon Arial Rounded MT Bold, Arial ou une police sans-serif générique */
+  font-weight: bold;
+  color: var(--blue);
+}
+
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey: #E5E5E5;
+  --blue: #14213D;
+  --coral: #e5383b;
+  --orange: #FCA311;
+}
+
+/* Styles pour les couleurs de texte et d'arrière-plan */
+.white { color: var(--white); }
+.bgWhite { background-color: var(--white); }
+.black { color: var(--black); }
+.bgBlack { background-color: var(--black); }
+.grey { color: var(--grey); }
+.bgGrey { background-color: var(--grey); }
+.blue { color: var(--blue); }
+.bgBlue { background-color: var(--blue); }
+.orange { color: var(--orange); }
+.bgOrange { background-color: var(--orange); }
+
+
+
+/* CSS pour les écrans d'ordinateur */
+@media (min-width: 992px) {
+  #laBilletterie {
+    top: -460px;
+    position: relative;
+    left: 43%; 
+    background-color: var(--black);
+  }
+}
+
+/* CSS pour les écrans mobiles */
+@media (max-width: 991px) {
+  #laBilletterie {
+    top: -150px;
+    position: relative;
+    left: 30%;
+    background-color: var(--black);
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+  }
+}
+
+/* Effet de survol de mon bouton "Billetterie" au milieu du slide */
+#laBilletterie:hover {
+  color: var(--orange);
+}  
+
+.bgNews:hover {
+  background-color: var(--white);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Page concert et programmation : les paramètres de mes fiches concerts */
+.product-card {
+  width: calc(33.33% - 20px);
+  float: right;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #7BDCB5;
+}
+
+body {
+  /* Vos styles d'arrière-plan ou autres styles globaux */
+  background-color: #F6F6FF; /* Exemple de couleur d'arrière-plan */  
+}
+
+/* Position de "informations et FAQ" dans le menu de mon header */
+.custom-margin {
+  margin-bottom: -10px; /* Ajustez la valeur en fonction de vos besoins */
+}
+
+/* Couleur de mes icônes de réseaux sociaux dans le footer */
+.custom-icon-color {
+  color: var(--white);
+}
+
+/* Mise en forme de l'inscription à la newsletter  */
+.newsletter-form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--grey);
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--blue);
+  background-color: var(--white);
+  margin-bottom: 70px;
+}
+
+.newsletter-form-container label {
+  display: block;
+  margin: 10px 0;
+}
+
+.newsletter-form-container input[type="text"],
+.newsletter-form-container input[type="email"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+}
+
+/* Mise en forme de la FAQ */
+.faq-item {
+  max-width: 70%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px var(--orange);
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: var(--white);
+}
+
+.faq-question {
+  background-color: var(--blue);
+  font-size: 1.1em !important;
+  color: var(--orange);
+  width: 85%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px; 
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.faq-question:hover {
+  background-color: var(--orange);
+  color: var(--blue);
+}
+
+.faq-answer {
+  width: 85%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  color: #1F1F1F;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  transition: text-decoration 0.3s ease;
+}
+
+/* Le panier */
+#panierPopup {
+  position: fixed;
+  top: 55px;
+  right: 10px;
+  z-index: 1000;
+  padding: 5px 10px;
+  width: auto;
+}
+
+/* Mise en forme de mon formulaire de contact */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid var(--blue);
+  box-shadow: 0 0 10px var(--blue);
+  border-radius: 5px;
+  background-color: var(--white);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  width: auto;
+  height: 30px;
+  line-height: 8px;
+  padding: 10px;
+  background-color: var(--blue);
+  color: var(--orange);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  color: var(--blue);
+  background-color: var(--orange);
+}
+
+/* Mise en forme de la page des mentions légales */
+.mentions-legales-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mentions-legales-title {
+  margin-bottom: 30px;
+}
+
+/* Mise en forme de la page billetterie */
+.pass-item {
+  display: flex;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.pass-content {
+  flex: 1;
+  padding: 10px;
+}
+
+.pass-image img {
+  width: 50%;
+  height: auto;
+}
+
+/* Message pop-up de l'ajout au panier */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Mise en forme du panier */
+.panier {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Pour ne pas souligner le texte des boutons quand il renvoie vers un lien */
+.lien-bouton {
+  text-decoration: none;
+}
+
+/* Mise en forme de mon bouton panier */
+.panier-button {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}

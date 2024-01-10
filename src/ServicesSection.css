@@ -1,0 +1,30 @@
+/* Section principale des services */
+.services-section {
+  padding: 50px 0;                 /* Ajout de rembourrage en haut et en bas de la section */
+       /* Couleur de fond de la section */
+}
+
+/* Titre de la section des services */
+.section-title {
+  text-align: center;               /* Centrage du texte */
+  font-size: 2rem;                  /* Taille de police du titre */
+  color: #14213D;                   /* Couleur du texte (bleu) */
+}
+
+/* Carte de service individuelle */
+.service-card {
+  background-color: #fff;            /* Couleur de fond de la carte de service */
+  padding: 20px;                     /* Ajout de rembourrage à l'intérieur de la carte */
+  margin-bottom: 20px;               /* Marge en bas de chaque carte pour l'espacement */
+  border-radius: 8px;                /* Ajout de coins arrondis à la carte */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ajout d'une ombre légère à la carte */
+  transition: transform 0.3s ease-in-out;  /* Ajout d'une transition douce lors du survol */
+  overflow: hidden;                  /* Masquage du contenu débordant de la carte */
+}
+
+/* Effet de survol de la carte de service */
+.service-card:hover {
+  transform: translateY(-10px);    /* Déplacement vers le haut de la carte au survol */
+}
+
+  

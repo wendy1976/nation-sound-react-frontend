@@ -1,0 +1,24 @@
+
+/* Style pour ma flèche scroll */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    height:auto;
+    right: 20px;
+    background-color: orange;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    display: none;
+  }
+  
+  .scroll-to-top svg {
+    font-size: 20px;
+  }
+  
+  .scroll-to-top.show {
+    display: block;
+  }
+  
