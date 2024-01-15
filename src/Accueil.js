@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import CarouselComponent from './CarouselComponent';
 import FestivalCountdown from './FestivalCountdown';
 import Footer from './Footer';
+import GetNotification from './GetNotification';
 import Header from './Header';
 import ScrollToTopButton from './ScrollToTopButton';
 import miniCarteImage from './assets/imagesEtLogo/images/minicarte.webp';
@@ -30,7 +31,8 @@ function Accueil() {
           </Card>
         </div>
       </div>
-
+      {/* SendPushNotification Component */}
+      <GetNotification />
       {/* Carousel Component */}
       <CarouselComponent />
 
