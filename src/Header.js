@@ -38,9 +38,9 @@ function Header() {
                 </Nav.Link>
               </LinkContainer>
             </Nav.Item>
-            {/* Lien vers la page Concerts */}
-            <Nav.Item className={isActive('/concerts') ? 'active' : ''}>
-              <LinkContainer to="/concerts">
+            {/* Lien vers la page ConcertPage */}
+            <Nav.Item className={isActive('/concertsPage') ? 'active' : ''}>
+              <LinkContainer to="/concertsPage">
                 <Nav.Link>
                   <h1 className="h6 mt-3 white" style={{ fontWeight: 600 }}>Concerts & Programmation</h1>
                 </Nav.Link>
@@ -102,14 +102,7 @@ function Header() {
                 </Nav.Link>
               </LinkContainer>
             </Nav.Item>
-            {/* Lien vers la page ConcertPage */}
-            <Nav.Item className={isActive('/concertsPage') ? 'active' : ''}>
-              <LinkContainer to="/concertsPage">
-                <Nav.Link>
-                  <h1 className="h6 mt-3 white" style={{ fontWeight: 600 }}>ConcertPage</h1>
-                </Nav.Link>
-              </LinkContainer>
-            </Nav.Item>
+            
             {/* Lien vers la page Carte interactive */}
             <Nav.Item className={isActive('/myMap') ? 'active' : ''}>
               <LinkContainer to="/myMap">
