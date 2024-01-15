@@ -18,9 +18,11 @@ function Accueil() {
     <div>
       {/* Header Component */}
       <Header />
+      {/* GetNotification Component */}
+      <GetNotification />
 
       {/* Festival Countdown Component */}
-      <div className="col-12 d-flex justify-content-center align-items-center mt-5 pt-5">
+      <div className="col-12 d-flex justify-content-center align-items-center mt-3 pt-5">
         <div className="col-md-4">
           <Card className='bgWhite'>
             <Card.Body>
@@ -31,8 +33,7 @@ function Accueil() {
           </Card>
         </div>
       </div>
-      {/* SendPushNotification Component */}
-      <GetNotification />
+      
       {/* Carousel Component */}
       <CarouselComponent />
 
