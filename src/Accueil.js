@@ -22,8 +22,8 @@ function Accueil() {
       <GetNotification />
 
       {/* Festival Countdown Component */}
-      <div className="col-12 d-flex justify-content-center align-items-center mt-3 pt-5">
-        <div className="col-md-4">
+      <div className="row d-flex justify-content-center align-items-center mt-3 pt-5">
+        <div className="col-md-4 ms-3">
           <Card className='bgWhite'>
             <Card.Body>
               <Card.Title className='fw-bold'>Compte à rebours du Festival</Card.Title>
