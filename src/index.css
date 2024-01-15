@@ -30,6 +30,8 @@ h1, h2, h3, h4, h5, h6 {
 .bgWhite { background-color: var(--white); }
 .black { color: var(--black); }
 .bgBlack { background-color: var(--black); }
+.coral { color: var(--coral); }
+.bgCoral { background-color: var(--coral); }
 .grey { color: var(--grey); }
 .bgGrey { background-color: var(--grey); }
 .blue { color: var(--blue); }

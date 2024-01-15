@@ -17,21 +17,16 @@ const Billetterie = () => {
   const [panierValide, setPanierValide] = useState(false);
 
   useEffect(() => {
-    // Fonction fetchData pour récupérer les données des produits
+    // Fonction fetchData pour récupérer les données des pass
     const fetchData = async () => {
-      const url = new URL('https://promptia.fr/wp-json/wc/v3/products?_embed');
-      url.searchParams.append('consumer_key', 'ck_e2c7c141b576494392f0d84d83daa63d792b71ff');
-      url.searchParams.append('consumer_secret', 'cs_b5f92310248c73aaf7a70782cbb32ed19b761c0e');
-      url.searchParams.append('per_page', 100);
-      url.searchParams.append('page', 1);
-
+      const url = '/api/passes'; // Utilisez '/api/passes' si vous avez configuré un proxy
+    
       try {
         const response = await fetch(url);
         const data = await response.json();
-
+    
         if (data) {
-          const passes = data.filter(product => product.name.includes('PASS'));
-          setPasses(passes);
+          setPasses(data);
         }
       } catch (error) {
         console.error('Erreur:', error);
@@ -46,14 +41,14 @@ const Billetterie = () => {
     setPanier((prevPanier) => {
       return {
         ...prevPanier,
-        [pass.name]: {
+        [pass.nom_pass]: {
           ...pass,
-          quantite: (prevPanier[pass.name]?.quantite || 0) + 1,
+          quantite: (prevPanier[pass.nom_pass]?.quantite || 0) + 1,
         },
       };
     });
 
-    setMessage(`${pass.name} a été ajouté au panier`);
+    setMessage(`${pass.nom_pass} a été ajouté au panier`);
     setTimeout(() => {
       setMessage('');
     }, 5000);
@@ -71,7 +66,7 @@ const Billetterie = () => {
   const supprimerDuPanier = (pass) => {
     setPanier((prevPanier) => {
       const newPanier = { ...prevPanier };
-      const titre = pass.name;
+      const titre = pass.nom_pass;
 
       newPanier[titre] = {
         ...pass,
@@ -80,7 +75,7 @@ const Billetterie = () => {
 
       if (newPanier[titre].quantite <= 0) {
         delete newPanier[titre];
-        setMessage(`${pass.name} a été supprimé du panier`);
+        setMessage(`${pass.nom_pass} a été supprimé du panier`);
         setTimeout(() => {
           setMessage('');
         }, 5000);
@@ -96,9 +91,9 @@ const Billetterie = () => {
   };
 
   // Fonction pour calculer le total du panier
-  const calculerTotal = () => {
-    return Object.values(panier).reduce((total, item) => total + item.price * item.quantite, 0);
-  };
+const calculerTotal = () => {
+  return Object.values(panier).reduce((total, item) => total + item.prix_pass * item.quantite, 0);
+};
 
   // Fonction pour calculer le nombre total d'articles dans le panier
   const calculerNombreArticles = () => {
@@ -121,17 +116,14 @@ const Billetterie = () => {
     const pdf = new jsPDF();
 
     // Déterminez les types de passes distincts dans le panier
-    const typesDePassDistincts = [...new Set(Object.values(panier).map(item => item.name))];
+    const typesDePassDistincts = [...new Set(Object.values(panier).map(item => item.nom_pass))];
 
     // Utilisez les types de passes distincts pour le titre
     const titre = `Festival de Musique Nation Sound - Billet(s) ${typesDePassDistincts.join(', ')}`;
 
-    pdf.setFillColor(255, 223, 186);
-    pdf.rect(10, 10, 190, 40, 'F');
-
     pdf.setFontSize(18);
     pdf.setTextColor(255, 74, 147);
-    pdf.addImage(logoImage, 'PNG', 10, 10, 190, 40);
+    pdf.addImage(logoImage, 'PNG', 10, 10, 40, 40);
     const lines = pdf.splitTextToSize(titre, 170);
     pdf.text(lines, 20, 60);
     pdf.line(10, 50, 200, 50);
@@ -141,11 +133,11 @@ const Billetterie = () => {
     Object.values(panier).forEach((item) => {
       pdf.setFontSize(12);
       pdf.setTextColor(0, 0, 0);
-      pdf.text(`${item.name} - Quantité: ${item.quantite}`, 20, yPosition);
+      pdf.text(`${item.nom_pass} - Quantité: ${item.quantite}`, 20, yPosition);
 
       pdf.setFontSize(10);
-      pdf.text(`Prix unitaire: ${item.price} €`, 20, yPosition + 10);
-      pdf.text(`Total: ${item.price * item.quantite} €`, 20, yPosition + 20);
+      pdf.text(`Prix unitaire: ${item.prix_pass} €`, 20, yPosition + 10);
+      pdf.text(`Total: ${item.prix_pass * item.quantite} €`, 20, yPosition + 20);
 
       yPosition += 40;
     });
@@ -175,13 +167,13 @@ const Billetterie = () => {
           )}
         </button>
       </div>
-
+  
       {afficherPanier && (
         <div className='panier me-3' style={{ borderRadius: '8px' }}>
           <div className="overlay mt-5" onClick={fermerPanier}></div>
           <div className="">
             {panierValide ? (
-              <h2 className='pt-5 h4 coral'>Votre panier a bien été validé!</h2>
+            <h2 className='pt-5 h4 coral'style={{ fontWeight: 'bold' }} >Votre panier a bien été validé!</h2>
             ) : (
               <>
                 <h2 className='mt-5 pt-5'>🧺 Panier</h2>
@@ -189,7 +181,7 @@ const Billetterie = () => {
                   {Object.values(panier).map((item) => (
                     item.quantite > 0 && (
                       <li key={item.id}>
-                        {item.name} - Quantité: {item.quantite} - Prix: {item.price * item.quantite} € TTC
+                        {item.nom_pass} - Quantité: {item.quantite} - Prix: {item.prix_pass * item.quantite} € TTC
                         <button className="btn btn-sm mr-2 fw-bold" onClick={() => supprimerDuPanier(item)}>Supprimer</button>
                       </li>
                     )
@@ -204,13 +196,13 @@ const Billetterie = () => {
           </div>
         </div>
       )}
-
+  
       {message && (
         <div className="popup">
           <p className='coral'>{message}</p>
         </div>
       )}
-
+  
       <div className="container">
         <h1 className="text-center mb-0 mt-3 pt-0 pb-5">Billetterie</h1>
         <p className="text-center mb-0 mt-3 pt-0 pb-5">Pour information, ce site étant fictif, vous n'avez pas d'options de paiement, vous validez votre panier, et votre billet de concert se télécharge automatiquement.</p>
@@ -219,9 +211,9 @@ const Billetterie = () => {
             <div key={pass.id} className="col-md-3 bgWhite ms-2 border mb-4 p-3 d-flex flex-column" style={{ borderRadius: '8px' }}>
               <div>
                 <img src={Image} alt="pass" className="img-fluid" style={{ maxWidth: '85%', height: 'auto', display: 'block', margin: '0 auto' }}/>
-                <h3 className='ms-4'>{pass.name}</h3>
-                <p className="me-2 ms-4" dangerouslySetInnerHTML={{ __html: pass.description }}></p>
-                <p className='ms-4'>Prix: {pass.price} €</p>
+                <h3 className='ms-4'>{pass.nom_pass}</h3>
+                <p className="me-2 ms-4" dangerouslySetInnerHTML={{ __html: pass.description_pass }}></p>
+                <p className='ms-4'>Prix: {pass.prix_pass} €</p>
               </div>
               <div className="mt-auto">
                 <button className="mb-2 my-2 ms-4" onClick={() => ajouterAuPanier(pass)}>Ajouter au panier</button>
@@ -234,8 +226,8 @@ const Billetterie = () => {
       </div>
     </Layout>
   );
-};
+  }
 
-export default Billetterie;
+  export default Billetterie;
 
  
