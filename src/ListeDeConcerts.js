@@ -75,16 +75,17 @@ function ListeDeConcerts() {
       (filtresScene["Guitares en fusion"] && concert.scene === "Guitares en fusion") ||
       (filtresScene["Terre d'Emeraude"] && concert.scene === "Terre d'Emeraude");
   
-      const concertDate = new Date(concert.date_concert.date);
-  const formattedDate = new Date(concertDate.getFullYear(), concertDate.getMonth(), concertDate.getDate()); // Ignorer l'heure
+    
 
-  const dateMatch = Object.keys(filtresDate).some((date) => {
-    const dateFiltre = new Date(date);
-    return (
-      filtresDate[date] &&
-      formattedDate.getTime() === new Date(dateFiltre.getFullYear(), dateFiltre.getMonth(), dateFiltre.getDate()).getTime()
-    );
-  });
+      const dateMatch = Object.keys(filtresDate).some((date) => {
+        const dateFiltre = moment(date, 'DD MMMM YYYY');
+        const concertDate = moment(concert.day, 'DD MMMM YYYY'); // Utilisez concert.day ici
+      
+        return (
+          filtresDate[date] &&
+          concertDate.isSame(dateFiltre)
+        );
+      });
 
   return (
     (musiqueMatch || Object.values(filtresMusique).every(value => !value)) &&
