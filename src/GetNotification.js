@@ -48,22 +48,22 @@ const GetNotification = () => {
         <div>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginTop: '120px' }}>
             {/* Bouton précédent */}
-            <Button variant='outlined' size='small' onClick={previousNotification} startIcon={<ChevronLeftIcon />}>
+            <Button variant='outlined' size='small' onClick={previousNotification} startIcon={<ChevronLeftIcon />} sx={{ flex: '0 0 120px' }}>
               Précédent
             </Button>
-  
+
             {/* Titre */}
-            <Typography variant='h5' component='div' sx={{ textAlign: 'center' }}>
+            <Typography className='coral' variant='h5' component='div' sx={{ textAlign: 'center' }}>
               {data[currentIndex].title}
             </Typography>
-  
+
             {/* Bouton suivant */}
-            <Button variant='outlined' size='small' onClick={nextNotification} endIcon={<ChevronRightIcon />}>
+            <Button className='blue' variant='outlined' size='small' onClick={nextNotification} endIcon={<ChevronRightIcon />} sx={{ flex: '0 0 120px' }}>
               Suivant
             </Button>
           </Box>
   
-          <Typography variant='body1' sx={{ marginTop: '20px', textAlign: 'center' }}>
+          <Typography className='coral' variant='body1' sx={{ marginTop: '20px', textAlign: 'center' }}>
             {data[currentIndex].body}
           </Typography>
   
@@ -80,7 +80,7 @@ const GetNotification = () => {
                 borderRadius: '50%',
                 margin: '0 5px',
                 cursor: 'pointer',
-              ...(index === currentIndex && { backgroundColor: '#555' }),
+              ...(index === currentIndex && { backgroundColor: 'blue' }),
             }}
           onClick={() => setCurrentIndex(index)}
           />
