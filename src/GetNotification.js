@@ -4,6 +4,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import 'animate.css';
 import React, { useEffect, useState } from 'react';
 
 const GetNotification = () => {
@@ -53,7 +54,7 @@ const GetNotification = () => {
             </Button>
 
             {/* Titre */}
-            <Typography className='coral' variant='h5' component='div' sx={{ textAlign: 'center' }}>
+            <Typography className='coral animate__animated animate__flash animate__infinite' variant='h5' component='div' sx={{ textAlign: 'center', animationDuration: '2s' }}>
               {data[currentIndex].title}
             </Typography>
 
