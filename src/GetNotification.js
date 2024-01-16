@@ -43,7 +43,7 @@ const GetNotification = () => {
   };
 
   return (
-    <div sx={{ marginTop: '100px', paddingTop: '100px', textAlign: 'center' }}>
+    <div sx={{ marginTop: '100px', paddingTop: '100px', textAlign: 'center'}}>
       {data ? (
         <div>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginTop: '120px' }}>
@@ -63,9 +63,9 @@ const GetNotification = () => {
             </Button>
           </Box>
   
-          <Typography className='coral' variant='body1' sx={{ marginTop: '20px', textAlign: 'center' }}>
-            {data[currentIndex].body}
-          </Typography>
+            <Typography className='coral' variant='body1' sx={{ marginTop: '20px', textAlign: 'center', margin: ['0', 'auto'], maxWidth: ['100%', '80%'] }}>
+              {data[currentIndex].body}
+            </Typography>
   
           {/* Indicateurs de position (ronds) */}
           <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
