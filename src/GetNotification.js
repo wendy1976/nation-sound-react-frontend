@@ -72,9 +72,11 @@ const GetNotification = () => {
           </Box>
           
 
-          <Typography className='coral' variant='body1' sx={{ marginTop: '20px', textAlign: 'center', margin: ['0', 'auto'], maxWidth: ['100%', '80%'] }}>
-            {data[currentIndex].body}
-          </Typography>
+          <a href={data[currentIndex].externalLink} target="_blank" rel="noopener noreferrer"style={{ textDecoration: 'none', color: 'inherit' }} >
+            <Typography className='coral' variant='body1' sx={{ marginTop: '20px', textAlign: 'center', margin: ['0', 'auto'], maxWidth: ['100%', '80%'] }}>
+              {data[currentIndex].body}
+            </Typography>
+          </a>
 
           {/* Indicateurs de position (ronds) */}
           <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
