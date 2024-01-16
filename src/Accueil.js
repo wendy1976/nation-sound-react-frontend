@@ -6,6 +6,7 @@ import CarouselComponent from './CarouselComponent';
 import FestivalCountdown from './FestivalCountdown';
 import Footer from './Footer';
 import GetNotification from './GetNotification';
+import GetNotificationInfo from './GetNotificationInfo';
 import Header from './Header';
 import ScrollToTopButton from './ScrollToTopButton';
 import miniCarteImage from './assets/imagesEtLogo/images/minicarte.webp';
@@ -44,11 +45,14 @@ function Accueil() {
         </Link>
       </div>
       
+      {/* GetNotificationInfo Component */}
+      <GetNotificationInfo />
+
       {/* Artists Section */}
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h2 className="text-center bold-title mb-5">Les Artistes</h2>
+            <h2 className="text-center bold-title mt-5 mb-5">Les Artistes</h2>
           </div>
         </div>
         <div className="row">
