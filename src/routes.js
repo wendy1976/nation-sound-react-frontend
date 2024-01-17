@@ -8,6 +8,7 @@ import FaqPage from './FaqPage';
 import Infos from './Infos';
 import LegalNotice from './LegalNotice';
 import MyMap from './MyMap';
+import MyMap2 from './MyMap2';
 import Newsletter from './Newsletter';
 import Partners from './Partners';
 
@@ -25,6 +26,7 @@ function AppRoutes() {
       <Route path="/legalNotice" element={<LegalNotice />} />
       <Route path="/billetterie" element={<Billetterie/>} />
       <Route path="/myMap" element={<MyMap />} />
+      <Route path="/myMap2" element={<MyMap2 />} />
       <Route path="/faqPage" element={<FaqPage />} />
       <Route path="/concertsPage" element={<ConcertsPage />} />
     </Routes>
