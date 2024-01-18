@@ -97,7 +97,7 @@ const MyMap = () => {
       <div className="pt-5">
         {/* Affichage des boutons de filtre */}
         {isDesktopOrLaptop && (
-          <div className="mb-5 mt-5" style={{ display: 'flex', gap: '10px' }}>
+          <div className="mb-5 mt-5 ms-2" style={{ display: 'flex', gap: '10px' }}>
             {uniqueCategoriesArray.map((category) => {
               // Trouver la première occurrence de la catégorie
               const locationWithIcon = locations.find((location) => location.category === category);
