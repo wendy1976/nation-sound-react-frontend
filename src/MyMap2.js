@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
+import './MyMap.css';
 
 const MyMap = () => {
   // Coordonnées de la cascade
@@ -15,6 +16,9 @@ const MyMap = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   
   const [locations, setLocations] = useState([]);
+
+  // État pour stocker la catégorie active
+  const [activeCategory, setActiveCategory] = useState(null);
 
   // Déclarer baseUrl ici
   const baseUrl = 'http://localhost:8000/images/location';
@@ -69,11 +73,14 @@ const MyMap = () => {
   // Gérer le changement de catégorie
   const handleCategoryFilter = (category) => {
     setSelectedCategory((prevCategory) => (prevCategory === category ? null : category));
+    setActiveCategory((prevCategory) => (prevCategory === category ? null : category));
   };
 
   // Réinitialiser le filtre
-  const resetFilter = () => {
+  const handleResetFilter = () => {
     setSelectedCategory(null);
+    setActiveCategory(null);
+    // Ajoutez d'autres logiques de réinitialisation ici si nécessaire
   };
 
   // Créer un ensemble pour stocker les catégories uniques
@@ -103,7 +110,7 @@ const MyMap = () => {
                 return (
                   <button
                     key={category}
-                    className="d-flex align-items-center"
+                    className={`d-flex align-items-center ${activeCategory === category ? 'active-filter' : ''}`}
                     onClick={() => handleCategoryFilter(category)}
                   >
                     <span style={{ display: 'flex', alignItems: 'center' }}>
@@ -130,7 +137,7 @@ const MyMap = () => {
                 </button>
               );
             })}
-            <button className="d-flex align-items-center" onClick={resetFilter}>
+            <button className="d-flex align-items-center" onClick={handleResetFilter}>
               Réinitialiser le filtre
             </button>
           </div>
@@ -151,7 +158,7 @@ const MyMap = () => {
               </select>
               {/* Bouton pour réinitialiser le filtre */}
               <div>
-                <button className="btn d-inline-block" onClick={resetFilter}>
+                <button className="btn d-inline-block" onClick={handleResetFilter}>
                   Réinitialiser le filtre
                 </button>
               </div>
