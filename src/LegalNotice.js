@@ -6,7 +6,7 @@ const LegalNotice = () => {
   return (
     <Layout>
     <div className='mentions-legales-container'>
-      <h1 className='text-center mentions-legales-title'>Mentions Légales</h1>
+      <h1 className='text-center mentions-legales-title mt-5 pt-5'>Mentions Légales</h1>
 
       <h2>Identité</h2>
       <p>
@@ -17,7 +17,7 @@ const LegalNotice = () => {
         <strong>Hébergement :</strong> NETLIFY
       </p>
 
-      <p className='red'>
+      <p className='coral'>
         <strong>Ce site a été créé pour un exercice de formation, les images, la musique sont libres de droits, et les concerts et artistes sont fictifs.</strong>
       </p>
 

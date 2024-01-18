@@ -299,3 +299,10 @@ button:hover {
   display: flex;
   align-items: center;
 }
+
+/* Mise en forme de la page de sécurité */
+.security-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}

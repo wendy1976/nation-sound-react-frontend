@@ -111,6 +111,15 @@ function Header() {
                 </Nav.Link>
               </LinkContainer>
             </Nav.Item>
+
+            {/* Lien vers la page Sécurité */}
+            <Nav.Item className={isActive('/SecurityInfoPage') ? 'active' : ''}>
+              <LinkContainer to="/SecurityInfoPage">
+                <Nav.Link>
+                  <h1 className="h6 mt-3 white" style={{ fontWeight: 600 }}>Sécurité</h1>
+                </Nav.Link>
+              </LinkContainer>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

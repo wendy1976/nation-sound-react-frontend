@@ -11,6 +11,7 @@ import MyMap from './MyMap';
 import MyMap2 from './MyMap2';
 import Newsletter from './Newsletter';
 import Partners from './Partners';
+import SecurityInfoPage from './SecurityInfoPage';
 
 
 function AppRoutes() {
@@ -29,6 +30,7 @@ function AppRoutes() {
       <Route path="/myMap2" element={<MyMap2 />} />
       <Route path="/faqPage" element={<FaqPage />} />
       <Route path="/concertsPage" element={<ConcertsPage />} />
+      <Route path="/SecurityInfoPage" element={<SecurityInfoPage />} />
     </Routes>
   );
 }
