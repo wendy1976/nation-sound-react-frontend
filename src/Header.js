@@ -62,7 +62,7 @@ function Header() {
                 onMouseLeave={() => setShowInfosSections(false)}
               >
                 <Nav.Link>
-                  <h1 className="h6 mt-3 white" style={{ fontWeight: 600 }}>Informations pratiques</h1>
+                  <h1 className="h6 mt-3 white" style={{ fontWeight: 600 }}>Infos pratiques</h1>
                 </Nav.Link>
                 {/* Sous-sections d'Infos pratiques */}
                 {showInfosSections && (
@@ -117,6 +117,14 @@ function Header() {
               <LinkContainer to="/SecurityInfoPage">
                 <Nav.Link>
                   <h1 className="h6 mt-3 white" style={{ fontWeight: 600 }}>Sécurité</h1>
+                </Nav.Link>
+              </LinkContainer>
+            </Nav.Item>
+            {/* Lien vers la page de connexion */}
+            <Nav.Item className={isActive('/LoginForm') ? 'active' : ''}>
+              <LinkContainer to="/LoginForm">
+                <Nav.Link>
+                  <h1 className="h6 mt-3 white" style={{ fontWeight: 600 }}>Connexion</h1>
                 </Nav.Link>
               </LinkContainer>
             </Nav.Item>
