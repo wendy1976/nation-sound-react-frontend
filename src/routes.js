@@ -7,6 +7,7 @@ import Faq from './Faq';
 import FaqPage from './FaqPage';
 import Infos from './Infos';
 import LegalNotice from './LegalNotice';
+import LoginForm from './LoginForm';
 import MyMap from './MyMap';
 import MyMap2 from './MyMap2';
 import Newsletter from './Newsletter';
@@ -31,6 +32,7 @@ function AppRoutes() {
       <Route path="/faqPage" element={<FaqPage />} />
       <Route path="/concertsPage" element={<ConcertsPage />} />
       <Route path="/SecurityInfoPage" element={<SecurityInfoPage />} />
+      <Route path="/loginForm" element={<LoginForm />} />
     </Routes>
   );
 }
