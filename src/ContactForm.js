@@ -1,5 +1,6 @@
 // Importations nécessaires
 import React, { useState } from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 import Layout from './Layout';
 import ScrollToTopButton from './ScrollToTopButton';
 
@@ -12,6 +13,7 @@ function ContactForm() {
         subject: '',
         message: '',
         agreement: false, // Nouvelle propriété pour la case à cocher
+        recaptchaValue: '', // Ajout de la propriété recaptchaValue
     });
 
     // State pour gérer l'état de soumission du formulaire
@@ -34,17 +36,41 @@ function ContactForm() {
     // Gestionnaire de soumission du formulaire
     function handleSubmit(event) {
         event.preventDefault();
-        
-        // Validation du formulaire
-        if (formData.fullName && formData.email && formData.subject && formData.message && formData.agreement) {
-            // Envoi des données du formulaire à un serveur (simulé avec console.log)
+
+        // Ajoutez cette ligne pour déclarer recaptchaValue
+        const recaptchaValue = formData.recaptchaValue;
+
+        if (formData.fullName && formData.email && formData.subject && formData.message && formData.agreement && recaptchaValue) {
+            // Envoyer les données du formulaire à un serveur (simulé avec console.log)
             console.log(formData);
-            setFormSubmitted(true); // Mettre à jour l'état de soumission du formulaire
+
+            // Envoyer la valeur reCAPTCHA côté serveur
+            fetch('/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Si la vérification est réussie, marquez le formulaire comme soumis
+                setFormSubmitted(true);
+            })
+            .catch(error => {
+                // Si la vérification échoue, affichez un message d'erreur ou prenez d'autres mesures nécessaires
+                console.error('Erreur lors de la vérification reCAPTCHA:', error);
+            });
         } else {
-            // Alerte si tous les champs ne sont pas remplis
-            alert('Veuillez remplir tous les champs du formulaire et accepter les conditions.');
+            alert('Veuillez remplir tous les champs du formulaire, accepter les conditions et compléter le reCAPTCHA.');
         }
     }
+
+    // Gestionnaire de changement reCAPTCHA
+    const handleRecaptchaChange = (value) => {
+        // Mettre à jour le state avec la valeur reCAPTCHA
+        setFormData((prevFormData) => ({ ...prevFormData, recaptchaValue: value }));
+    };
 
     // Rendu du composant
     return (
@@ -84,6 +110,8 @@ function ContactForm() {
                                 </span>
                             </label>
                         </div>
+                        {/* reCAPTCHA */}
+                        <ReCAPTCHA sitekey="6LcR51kpAAAAAPX21K1QtHoWCUxm1q691dahwNTT" onChange={handleRecaptchaChange} />
                         {/* Bouton d'envoi du formulaire */}
                         <button type="submit">Envoyer</button>
                     </form>
@@ -96,4 +124,3 @@ function ContactForm() {
 }
 
 export default ContactForm;
- 
