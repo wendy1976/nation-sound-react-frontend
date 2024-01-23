@@ -1,0 +1,13 @@
+/* Style par défaut pour les mobiles */
+.form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Style pour les écrans d'ordinateur */
+@media (min-width: 768px) { /* 768px est généralement la taille à laquelle on passe aux styles de bureau */
+    .form {
+        width: 40%;
+        margin: 0 auto;
+    }
+}

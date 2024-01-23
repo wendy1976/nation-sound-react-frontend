@@ -1,6 +1,7 @@
 // Importations nécessaires
 import React, { useState } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
+import './ContactForm.css';
 import Layout from './Layout';
 import ScrollToTopButton from './ScrollToTopButton';
 
@@ -78,13 +79,13 @@ function ContactForm() {
             <div className="mt-5 pt-5">
             <h1 className="text-center blue mt-5">Formulaire de contact</h1>
             </div>
-            <div className="contact-form-container pb-5 pt-5 mt-5 mb-3">
+            <div className="contact-form-container pb-5 pt-5 mt-5 mb-5" >
                 {/* Afficher un message de remerciement si le formulaire a été soumis */}
                 {formSubmitted ? (
                     <p className='coral'>Merci pour votre message! Nous vous répondrons dès que possible.</p>
                 ) : (
                     // Afficher le formulaire si le formulaire n'a pas été soumis
-                    <form onSubmit={handleSubmit} className="form">
+                    <form onSubmit={handleSubmit} className="form mb-5 mt-5">
                         <div className="form-group">
                             <label>Nom complet:</label>
                             <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Entrez votre nom complet" />
@@ -113,7 +114,7 @@ function ContactForm() {
                         {/* reCAPTCHA */}
                         <ReCAPTCHA sitekey="6LcR51kpAAAAAPX21K1QtHoWCUxm1q691dahwNTT" onChange={handleRecaptchaChange} />
                         {/* Bouton d'envoi du formulaire */}
-                        <button type="submit">Envoyer</button>
+                        <button type="submit" className='mt-3'>Envoyer</button>
                     </form>
                 )}
                 {/* ScrollToTopButton Component */}
