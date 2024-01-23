@@ -63,7 +63,35 @@ const LegalNotice = () => {
         Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée, accompagnée d’une preuve d’identité.<br />
         Le site ne recueille pas d’informations personnelles, et n’est pas assujetti à déclaration à la CNIL. (Remplacé par les disposition de la RGPD)<br />
         Politique de confidentialité : se référer à la page Politique de Confidentialité<br />
-        Politique de cookies : se référer à la page Politique des Cookies
+        
+      </p>
+      <h2>Politique des Cookies</h2>
+      <p>
+        <strong>Qu'est-ce qu'un cookie ?</strong><br />
+        Un cookie est un petit fichier texte stocké sur votre ordinateur ou appareil mobile lors de la visite d'un site web. Les cookies sont largement utilisés pour assurer le bon fonctionnement des sites, collecter des informations sur la navigation et fournir des fonctionnalités personnalisées.
+      </p>
+
+      <p>
+        <strong>Comment utilisons-nous les cookies ?</strong><br />
+        Notre site utilise des cookies pour améliorer l'expérience utilisateur, analyser le trafic du site, et personnaliser le contenu. Ces cookies peuvent être des cookies tiers, qui sont générés par des domaines autres que celui du site que vous visitez.
+      </p>
+
+      <p>
+        <strong>Types de cookies utilisés :</strong><br />
+        - <strong>Cookies essentiels :</strong> Ces cookies sont nécessaires au bon fonctionnement du site et permettent l'accès à des fonctionnalités de base.<br />
+        - <strong>Cookies analytiques :</strong> Ces cookies nous aident à comprendre comment les visiteurs interagissent avec le site en collectant et en rapportant des informations de manière anonyme.<br />
+        - <strong>Cookies de personnalisation :</strong> Ces cookies sont utilisés pour personnaliser l'expérience utilisateur en mémorisant vos préférences et choix sur le site.<br />
+        - <strong>Cookies de marketing :</strong> Ces cookies sont utilisés pour suivre les visiteurs sur les sites web. L'intention est d'afficher des publicités pertinentes et engageantes pour l'utilisateur individuel.
+      </p>
+
+      <p>
+        <strong>Contrôle des cookies :</strong><br />
+        Vous avez la possibilité de contrôler et de configurer les cookies dans les paramètres de votre navigateur. Vous pouvez bloquer les cookies, supprimer les cookies existants, ou être averti avant l'installation d'un nouveau cookie. Notez cependant que la désactivation des cookies peut affecter votre expérience sur le site.
+      </p>
+
+      <p>
+        <strong>Modifications de la politique des cookies :</strong><br />
+        Nous nous réservons le droit de modifier cette politique des cookies à tout moment. Toute modification sera publiée sur cette page, alors veuillez la consulter régulièrement pour rester informé des mises à jour.
       </p>
       {/* ScrollToTopButton Component */}
       <ScrollToTopButton />
