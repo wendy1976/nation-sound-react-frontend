@@ -2,25 +2,36 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function LoginForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
   const [loginError, setLoginError] = useState(null);
 
   const onSubmit = data => {
+    setLoginError(null); // Réinitialiser les erreurs avant chaque soumission
+  
     fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password
+        })
+      })
+      
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
+        if (!response.ok) {
+          return response.json().then(err => {throw JSON.stringify(err);});
+        }
+        return response.json();
+      })
+
     .then(data => {
-      // Handle the response here. For example, update the global state and redirect the user.
+      if (data.status === 'ok') {
+        // Stocker le token ou effectuer d'autres actions après une connexion réussie
+      } else {
+        setLoginError('Failed to login. Please try again.');
+      }
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -38,7 +49,9 @@ export default function LoginForm() {
       
       {loginError && <div>{loginError}</div>}
       
-      <input type="submit" />
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Logging in...' : 'Login'}
+      </button>
     </form>
   );
 }
