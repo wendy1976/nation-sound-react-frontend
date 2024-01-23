@@ -9,28 +9,21 @@ export default function LoginForm() {
     setLoginError(null); // Réinitialiser les erreurs avant chaque soumission
   
     fetch('/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: data.email,
-          password: data.password
-        })
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: data.email,
+        password: data.password
       })
-      
-    .then(response => {
-        if (!response.ok) {
-          return response.json().then(err => {throw JSON.stringify(err);});
-        }
-        return response.json();
-      })
-
+    })
+    .then(response => response.json())
     .then(data => {
       if (data.status === 'ok') {
         // Stocker le token ou effectuer d'autres actions après une connexion réussie
       } else {
-        setLoginError('Failed to login. Please try again.');
+        setLoginError(data.error || 'Failed to login. Please try again.');
       }
     })
     .catch((error) => {
