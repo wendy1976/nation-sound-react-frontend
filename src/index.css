@@ -186,12 +186,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 100%;
   padding: 20px;
   border: 1px solid var(--blue);
   box-shadow: 0 0 10px var(--blue);

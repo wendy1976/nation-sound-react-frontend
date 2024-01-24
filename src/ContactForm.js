@@ -85,7 +85,7 @@ function ContactForm() {
                     <p className='coral'>Merci pour votre message! Nous vous répondrons dès que possible.</p>
                 ) : (
                     // Afficher le formulaire si le formulaire n'a pas été soumis
-                    <form onSubmit={handleSubmit} className="form mb-5 mt-5">
+                    <form onSubmit={handleSubmit} className="form mb-5 mt-5" style={{ width: '100%', maxWidth: '60%', margin: '0 auto' }}>
                         <div className="form-group">
                             <label>Nom complet:</label>
                             <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Entrez votre nom complet" />
