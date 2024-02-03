@@ -20,7 +20,7 @@ export default function LoginForm() {
   const handleLogin = data => {
     setLoginError(null);
 
-    fetch('/login', {
+    fetch('/frontend/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
