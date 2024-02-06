@@ -85,22 +85,22 @@ export default function LoginForm() {
 
         <div className="col-md-6">
           <input name="email" {...register('email', { required: true })} className="form-control mb-3" placeholder="Email" />
-          {errors.email && <div className="text-danger">Email is required.</div>}
+          {errors.email && <div className="text-danger">Email requis.</div>}
 
           <input name="password" type="password" {...register('password', { required: true })} className="form-control mb-3" placeholder="Password" />
-          {errors.password && <div className="text-danger">Password is required.</div>}
+          {errors.password && <div className="text-danger">Mot de passe requis.</div>}
         </div>
 
         {isRegistering && (
           <div className="col-md-6">
             <input name="nom" {...register('nom', { required: true })} className="form-control mb-3" placeholder="Nom" />
-            {errors.nom && <div className="text-danger">Nom is required.</div>}
+            {errors.nom && <div className="text-danger">Nom requis.</div>}
 
             <input name="prenom" {...register('prenom', { required: true })} className="form-control mb-3" placeholder="Prénom" />
-            {errors.prenom && <div className="text-danger">Prénom is required.</div>}
+            {errors.prenom && <div className="text-danger">Prénom requis.</div>}
 
             <input name="email_confirmation" {...register('email_confirmation', { required: true })} className="form-control mb-3" placeholder="Confirm Email" />
-            {errors.email_confirmation && <div className="text-danger">Email confirmation is required.</div>}
+            {errors.email_confirmation && <div className="text-danger">Email de confirmation requis.</div>}
           </div>
         )}
 
