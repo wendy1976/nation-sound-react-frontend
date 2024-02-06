@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import CarouselComponent from './CarouselComponent';
+import CookieBanner from './CookieBanner';
 import FestivalCountdown from './FestivalCountdown';
 import Footer from './Footer';
 import GetNotification from './GetNotification';
@@ -119,6 +120,8 @@ function Accueil() {
       
       {/* Footer Component */}
       <Footer />
+
+      <CookieBanner />
 
       {/* ScrollToTopButton Component */}
       <ScrollToTopButton />
