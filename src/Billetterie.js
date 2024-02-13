@@ -16,23 +16,27 @@ const Billetterie = () => {
   const [afficherPanier, setAfficherPanier] = useState(false);
   const [panierValide, setPanierValide] = useState(false);
 
+  // useEffect est un Hook de React qui permet d'exécuter du code après chaque rendu du composant.
   useEffect(() => {
     // Fonction fetchData pour récupérer les données des pass
     const fetchData = async () => {
-      const url = '/api/passes'; // Utilisez '/api/passes' si vous avez configuré un proxy
+       // L'URL de l'API à partir de laquelle les données seront récupérées.
+      const url = '/api/passes';
     
       try {
+        // Récupération des données à partir de l'URL.
         const response = await fetch(url);
         const data = await response.json();
-    
+        // Mise à jour de l'état des passes si des données ont été récupérées.
         if (data) {
           setPasses(data);
         }
       } catch (error) {
+        // Affichage des erreurs éventuelles.
         console.error('Erreur:', error);
       }
     };
-
+    // Appel de la fonction pour récupérer les données.
     fetchData();
   }, []);
 
