@@ -1,0 +1,5 @@
+/api/* http://localhost:8000/api/:splat 200
+/login http://localhost:8000/login 200
+/contact http://localhost:8000/contact 200
+/register http://localhost:8000/register 200
+/frontend/login http://localhost:8000/frontend/login 200
